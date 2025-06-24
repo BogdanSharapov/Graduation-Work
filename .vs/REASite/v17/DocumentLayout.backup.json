@@ -190,8 +190,7 @@
               "RelativeToolTip": "REASite\\ViewModel\\AccountViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T18:32:28.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-23T18:32:28.018Z"
             },
             {
               "$type": "Document",
@@ -203,8 +202,7 @@
               "RelativeToolTip": "REASite\\Views\\Account\\_EditBookingModal.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-24T11:03:30.683Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-24T11:03:30.683Z"
             },
             {
               "$type": "Document",
@@ -216,8 +214,7 @@
               "RelativeToolTip": "REASite\\ViewModel\\BookingEditViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T11:03:20.567Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-24T11:03:20.567Z"
             },
             {
               "$type": "Document",
@@ -229,8 +226,7 @@
               "RelativeToolTip": "REASite\\Models\\Booking.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T20:24:29.337Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-27T20:24:29.337Z"
             },
             {
               "$type": "Document",
@@ -240,7 +236,7 @@
               "RelativeDocumentMoniker": "REASite\\Controllers\\AccountController.cs",
               "ToolTip": "C:\\Users\\sarap\\source\\repos\\StudyUtility\\REASite\\REASite\\Controllers\\AccountController.cs",
               "RelativeToolTip": "REASite\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAAAFYAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFYAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-24T10:50:24.002Z",
               "EditorCaption": ""
@@ -255,8 +251,7 @@
               "RelativeToolTip": "REASite\\Controllers\\FavoritesController.cs",
               "ViewState": "AgIAAD4AAAAAAAAAAAAswF0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T11:34:40.798Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-24T11:34:40.798Z"
             },
             {
               "$type": "Document",
@@ -268,8 +263,7 @@
               "RelativeToolTip": "REASite\\Controllers\\BookingController.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAA1wEoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T10:50:25.468Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-24T10:50:25.468Z"
             },
             {
               "$type": "Document",
@@ -281,8 +275,7 @@
               "RelativeToolTip": "REASite\\Views\\Account\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-24T11:09:37.917Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-24T11:09:37.917Z"
             },
             {
               "$type": "Document",
@@ -294,8 +287,7 @@
               "RelativeToolTip": "REASite\\wwwroot\\js\\booking-edit.js",
               "ViewState": "AgIAABcAAAAAAAAAAAAuwCwAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-05-24T11:07:38.578Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-24T11:07:38.578Z"
             },
             {
               "$type": "Document",
@@ -331,8 +323,7 @@
               "RelativeToolTip": "REASite\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-23T17:59:59.566Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-23T17:59:59.566Z"
             },
             {
               "$type": "Document",
@@ -356,8 +347,7 @@
               "RelativeToolTip": "REASite\\Controllers\\AdminController.cs",
               "ViewState": "AgIAAE8AAAAAAAAAAAAiwGgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T21:36:11.258Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-27T21:36:11.258Z"
             },
             {
               "$type": "Document",
