@@ -1,0 +1,168 @@
+﻿@model List<REASite.Models.Apartment>
+@{
+    List<int> favoriteIds = ViewData["FavoriteIds"] as List<int> ?? new List<int>();
+}
+@using Microsoft.AspNetCore.Identity
+@using REASite.Areas.Identity.Data
+
+@inject SignInManager<SiteUser> SignInManager
+@inject UserManager<SiteUser> UserManager
+
+<style>
+    .card {
+        background-color: #f8f9fa;
+    }
+
+    .action-buttons {
+        position: absolute;
+        bottom: 15px;
+    }
+
+    .view-detail-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 2;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .btn-icon {
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        font-size: 1.25rem;
+        transition: color 0.2s;
+    }
+
+    .favorite-button i {
+        color: #dc3545 !important;
+        transition: color 0.3s ease !important;
+    }
+
+    .favorite-button.active i {
+        color: #dc3545 !important;
+    }
+
+    .favorite-button:focus
+    .favorite-button:active {
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+
+    .favorite-button:not(.active):hover i {
+        color: #dc3545 !important;
+    }
+    /* Позиционирование иконок */
+    .left-buttons {
+        left: 15px;
+    }
+
+    .right-buttons {
+        right: 15px;
+    }
+
+    .buttons-group {
+        gap: 10px;
+    }
+</style>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var apartment in Model)
+    {
+        var isFavorite = favoriteIds.Contains(apartment.Id);
+        <div class="col mb-4">
+            <div class="card position-relative h-100" data-delete-url="@Url.Action("Index", "Apartment", new { id = apartment.Id })">
+                <!-- Кнопка просмотра -->
+                <a href="@Url.Action("Index", "Apartment", new { id = apartment.Id })"
+                   class="view-detail-button">
+                    <i class="bi bi-arrows-angle-expand"></i>
+                </a>
+
+                <div id="carousel_@apartment.Id" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        @if (apartment.Images != null && apartment.Images.Count > 0)
+                        {
+                            @for (int i = 0; i < apartment.Images.Count; i++)
+                            {
+                                <div class="carousel-item @(i == 0 ? "active" : "")">
+                                    <img src="@Url.Action("Get", "Image", new { imageId = apartment.Images[i].ImageID })" class="d-block w-100" alt="@apartment.Title" loading="lazy" />
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="carousel-item active">
+                                <img src="/images/placeholder.jpg" class="d-block w-100" alt="Нет фото" />
+                            </div>
+                        }
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel_@apartment.Id" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel_@apartment.Id" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                @Html.AntiForgeryToken()
+                <div class="card-body pb-5">
+                    <!-- Добавлен нижний padding -->
+                    <h5 class="card-title">@apartment.Title</h5>
+                    <p class="card-text">Площадь: @apartment.Area м²</p>
+                    <p class="card-text">Комнат: @apartment.RoomsCount</p>
+                    <p class="card-text">Тип предложения: @apartment.OfferType</p>
+                    <p class="card-text">Адрес: @apartment.Address.Country, @apartment.Address.City, @apartment.Address.Street, @apartment.Address.HouseNum</p>
+
+                    <div class="action-buttons d-flex buttons-group left-buttons">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <button class="btn-icon favorite-button @(isFavorite ? "active" : "")"
+                                    data-apartment-id="@apartment.Id"
+                                    onclick="toggleFavorite(this, @apartment.Id, @isFavorite.ToString().ToLower())">
+                                <i class="bi @(isFavorite ? "bi-heart-fill" : "bi-heart")"></i>
+                            </button>
+                        }
+
+                        @if (apartment.OfferType == OfferTypeEnum.DailyRent)
+                        {
+                            <a asp-controller="Booking" asp-action="Book" asp-route-apartmentId="@apartment.Id"
+                               class="btn-icon">
+                                <i class="bi bi-calendar-event"></i>
+                            </a>
+                        }
+                    </div>
+
+                    <!-- Группа кнопок справа -->
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+
+                        @if (User.IsInRole("Admin") || User.IsInRole("Manager"))
+                        {
+                            <div class="action-buttons d-flex buttons-group right-buttons">
+                                <a asp-action="Edit" asp-route-id="@apartment.Id" class="btn-icon">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <button class="btn-icon delete-button"
+                                        data-id="@apartment.Id"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#deleteModal"
+                                        data-apartment-id="@apartment.Id">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
